@@ -3,6 +3,7 @@
   "proxy": "http://localhost:8080",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://the-logic-lounge.github.io/Healio-Doctor-Appointment-System/",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
     "@testing-library/jest-dom": "^5.17.0",
