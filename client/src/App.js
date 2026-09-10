@@ -19,7 +19,7 @@ function App() {
   const { loading } = useSelector((state) => state.alerts);
   return (
     <>
-      <BrowserRouter>
+    <BrowserRouter basename="/Healio-Doctor-Appointment-System">
         {loading ? (
           <Spinner />
         ) : (
