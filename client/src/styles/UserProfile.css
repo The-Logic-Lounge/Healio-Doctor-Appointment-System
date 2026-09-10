@@ -1,0 +1,449 @@
+/* ==========================================================================
+   User Profile Styles - Exact Theme Variable Alignment
+   ========================================================================== */
+
+.user-profile-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 36px 48px;
+  background: var(--theme-canvas);
+  min-height: calc(100vh - 80px);
+}
+
+/* Page Header */
+.profile-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.profile-page-header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--theme-text-primary);
+}
+
+.profile-page-header p {
+  margin: 6px 0 0;
+  color: var(--theme-text-secondary);
+  font-size: 14px;
+}
+
+.profile-breadcrumb {
+  color: var(--theme-text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.profile-breadcrumb span {
+  margin: 0 8px;
+  color: var(--theme-teal);
+}
+
+/* Main Profile Card */
+.profile-main-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-bottom: 24px;
+  border: 1px solid var(--theme-card-border);
+  box-shadow: var(--theme-card-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-identity {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.profile-avatar {
+  background: var(--theme-teal-mint) !important;
+  color: var(--theme-teal-dark) !important;
+  font-size: 36px !important;
+  font-weight: 700;
+}
+
+.profile-identity-info h2 {
+  margin: 0;
+  color: var(--theme-text-primary);
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.profile-name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.role-badge {
+  background: var(--theme-teal-mint);
+  color: var(--theme-teal-dark);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.profile-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.profile-contact span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--theme-text-secondary);
+  font-size: 13px;
+}
+
+.profile-contact svg {
+  color: var(--theme-teal);
+}
+
+.profile-message {
+  background: var(--theme-teal-subtle);
+  border: 1px solid var(--theme-card-border);
+  border-radius: 14px;
+  padding: 16px 22px;
+  min-width: 240px;
+  text-align: center;
+}
+
+.profile-message span {
+  color: var(--theme-teal);
+  font-size: 28px;
+  line-height: 14px;
+}
+
+.profile-message p {
+  margin: 4px 0 0;
+  color: var(--theme-teal-dark);
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Content Grid */
+.profile-content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.profile-side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.profile-info-card {
+  background: #ffffff;
+  border: 1px solid var(--theme-card-border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--theme-card-shadow);
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.card-heading > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-heading > div > svg {
+  color: var(--theme-teal);
+  font-size: 18px;
+}
+
+.card-heading h3 {
+  margin: 0;
+  color: var(--theme-text-primary);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.edit-profile-btn {
+  border: none;
+  background: var(--theme-teal-mint);
+  color: var(--theme-teal-dark);
+  padding: 7px 14px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.edit-profile-btn:hover {
+  background: #d1fae5;
+}
+
+/* Information Rows */
+.info-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-info-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 4px;
+  border-bottom: 1px solid var(--theme-line);
+}
+
+.profile-info-row:last-child {
+  border-bottom: none;
+}
+
+.info-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--theme-teal-mint);
+  color: var(--theme-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-info-row div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile-info-row small {
+  color: var(--theme-text-muted);
+  font-size: 11px;
+}
+
+.profile-info-row strong {
+  color: var(--theme-text-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Statistics */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.stat-box {
+  min-height: 75px;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  column-gap: 8px;
+  align-items: center;
+}
+
+.stat-box svg {
+  grid-row: span 2;
+  font-size: 20px;
+}
+
+.stat-box strong {
+  font-size: 20px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.stat-box span:last-child {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.stat-box.blue {
+  background: var(--theme-teal-mint);
+  color: var(--theme-teal-dark);
+}
+
+.stat-box.green {
+  background: var(--theme-success-bg);
+  color: var(--theme-teal-dark);
+}
+
+.stat-box.orange {
+  background: var(--theme-warning-bg);
+  color: #b45309;
+}
+
+.check-icon,
+.clock-icon {
+  grid-row: span 2;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Account Actions */
+.account-action {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--theme-line);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.account-action:hover {
+  background: var(--theme-teal-subtle);
+}
+
+.account-action:last-child {
+  border-bottom: none;
+}
+
+.action-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-icon.edit {
+  background: var(--theme-teal-mint);
+  color: var(--theme-teal);
+}
+
+.action-icon.password {
+  background: #f3e8ff;
+  color: #7e22ce;
+}
+
+.account-action > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.account-action strong {
+  color: var(--theme-text-primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.account-action small {
+  color: var(--theme-text-muted);
+  font-size: 11px;
+}
+
+.account-action > span {
+  color: var(--theme-text-muted);
+  font-size: 18px;
+}
+
+/* Recent Appointments */
+.recent-appointments-card {
+  margin-top: 24px;
+}
+
+.view-all-link {
+  color: var(--theme-teal);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.view-all-link:hover {
+  text-decoration: underline;
+}
+
+.no-appointments {
+  padding: 32px;
+  text-align: center;
+  color: var(--theme-text-secondary);
+}
+
+.recent-appointments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recent-appointment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--theme-line);
+  background: var(--theme-canvas);
+}
+
+.doctor-avatar {
+  background: var(--theme-teal-mint);
+  color: var(--theme-teal);
+  font-weight: 700;
+}
+
+.appointment-doctor strong {
+  display: block;
+  font-size: 13px;
+  color: var(--theme-text-primary);
+}
+
+.appointment-doctor small {
+  color: var(--theme-teal);
+  font-size: 11px;
+}
+
+.appointment-date {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  color: var(--theme-text-secondary);
+}
+
+/* Footer */
+.profile-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 28px;
+  padding: 15px 4px;
+  color: var(--theme-text-muted);
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .profile-main-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-message {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
