@@ -122,7 +122,6 @@ function App() {
           </Routes>
         )}
       </BrowserRouter>
-    </>
   );
 }
 
