@@ -27,12 +27,17 @@ const Login = () => {
         message.success("Login Successfully");
         navigate("/");
       } else {
-        message.error(res.data.message);
+        message.error(res.data.message || "Login failed");
       }
     } catch (error) {
       dispatch(hideLoading());
-      console.log(error);
-      message.error("something went wrong");
+      console.error("Login Error:", error);
+      const errorMsg =
+        error.response?.data?.message ||
+        (error.message === "Network Error"
+          ? "Unable to connect to server. Please ensure backend is running."
+          : error.message || "Something went wrong");
+      message.error(errorMsg);
     }
   };
 

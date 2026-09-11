@@ -28,12 +28,17 @@ const Register = () => {
         message.success("Register Successfully!");
         navigate("/login");
       } else {
-        message.error(res.data.message);
+        message.error(res.data.message || "Registration failed");
       }
     } catch (error) {
       dispatch(hideLoading());
-      console.log(error);
-      message.error("Something Went Wrong");
+      console.error("Registration Error:", error);
+      const errorMsg =
+        error.response?.data?.message ||
+        (error.message === "Network Error"
+          ? "Unable to connect to server. Please ensure backend is running."
+          : error.message || "Something went wrong");
+      message.error(errorMsg);
     }
   };
 
