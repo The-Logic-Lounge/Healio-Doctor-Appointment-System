@@ -18,8 +18,7 @@ import UserProfile from "./pages/UserProfile";
 function App() {
   const { loading } = useSelector((state) => state.alerts);
   return (
-    <>
-    <BrowserRouter basename="/Healio-Doctor-Appointment-System">
+      <BrowserRouter basename="/Healio-Doctor-Appointment-System">
         {loading ? (
           <Spinner />
         ) : (
