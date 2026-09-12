@@ -8,6 +8,7 @@ const mapUser = (user) => {
     _id: user.id,
     isAdmin: user.is_admin,
     isDoctor: user.is_doctor,
+    phone: user.phone || null,
     notifcation: user.notification || [],
     seennotification: user.seen_notification || [],
   };
@@ -19,6 +20,7 @@ class UserModel {
     this.name = data.name;
     this.email = data.email;
     this.password = data.password;
+    this.phone = data.phone || null;
     this.isAdmin = data.isAdmin ?? data.is_admin ?? false;
     this.isDoctor = data.isDoctor ?? data.is_doctor ?? false;
     this.notifcation = data.notifcation ?? data.notification ?? [];
@@ -31,6 +33,7 @@ class UserModel {
       name: this.name,
       email: this.email,
       password: this.password,
+      phone: this.phone,
       is_admin: this.isAdmin,
       is_doctor: this.isDoctor,
       notification: this.notifcation,
@@ -114,6 +117,7 @@ class UserModel {
     if (update.name !== undefined) userData.name = update.name;
     if (update.email !== undefined) userData.email = update.email;
     if (update.password !== undefined) userData.password = update.password;
+    if (update.phone !== undefined) userData.phone = update.phone;
     if (update.isAdmin !== undefined) userData.is_admin = update.isAdmin;
     if (update.isDoctor !== undefined) userData.is_doctor = update.isDoctor;
     if (update.notifcation !== undefined) {

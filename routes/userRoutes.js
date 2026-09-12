@@ -10,7 +10,10 @@ const {
   bookeAppointmnetController,
   bookingAvailabilityController,
   userAppointmentsController,
+  updateProfileController,
+  changePasswordController,
 } = require("../controllers/userCtrl");
+
 const authMiddleware = require("../middlewares/authMiddleware");
 
 //router onject
@@ -57,5 +60,11 @@ router.post(
 
 //Appointments List
 router.get("/user-appointments", authMiddleware, userAppointmentsController);
+
+// Update Profile
+router.put("/update-profile", authMiddleware, updateProfileController);
+
+// Change Password
+router.put("/change-password", authMiddleware, changePasswordController);
 
 module.exports = router;

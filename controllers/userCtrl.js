@@ -398,6 +398,106 @@ const userAppointmentsController = async (req, res) => {
   }
 };
 
+// UPDATE PROFILE
+const updateProfileController = async (req, res) => {
+  try {
+    const { name, phone } = req.body;
+
+    if (!name || name.trim().length < 2) {
+      return res.status(400).send({
+        success: false,
+        message: "Name must be at least 2 characters.",
+      });
+    }
+
+    const updateData = { name: name.trim() };
+    if (phone !== undefined) updateData.phone = phone.trim();
+
+    const updatedUser = await userModel.findByIdAndUpdate(
+      req.body.userId,
+      updateData
+    );
+
+    if (!updatedUser) {
+      return res.status(404).send({
+        success: false,
+        message: "User not found.",
+      });
+    }
+
+    updatedUser.password = undefined;
+
+    res.status(200).send({
+      success: true,
+      message: "Profile updated successfully.",
+      data: updatedUser,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: `Error updating profile: ${error.message}`,
+    });
+  }
+};
+
+// CHANGE PASSWORD
+const changePasswordController = async (req, res) => {
+  try {
+    const { currentPassword, newPassword } = req.body;
+
+    if (!currentPassword || !newPassword) {
+      return res.status(400).send({
+        success: false,
+        message: "Both current and new password are required.",
+      });
+    }
+
+    if (newPassword.length < 6) {
+      return res.status(400).send({
+        success: false,
+        message: "New password must be at least 6 characters.",
+      });
+    }
+
+    const user = await userModel.findById(req.body.userId);
+
+    if (!user) {
+      return res.status(404).send({
+        success: false,
+        message: "User not found.",
+      });
+    }
+
+    const isMatch = await bcrypt.compare(currentPassword, user.password);
+
+    if (!isMatch) {
+      return res.status(400).send({
+        success: false,
+        message: "Current password is incorrect.",
+      });
+    }
+
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+    await userModel.findByIdAndUpdate(req.body.userId, {
+      password: hashedPassword,
+    });
+
+    res.status(200).send({
+      success: true,
+      message: "Password changed successfully.",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: `Error changing password: ${error.message}`,
+    });
+  }
+};
+
 module.exports = {
   loginController,
   registerController,
@@ -409,4 +509,6 @@ module.exports = {
   bookeAppointmnetController,
   bookingAvailabilityController,
   userAppointmentsController,
+  updateProfileController,
+  changePasswordController,
 };
