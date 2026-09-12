@@ -5,13 +5,13 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import axios from "axios";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 // Configure default baseURL for API requests. 
 // In development, it defaults to "" (using package.json proxy). 
 // In production, it uses REACT_APP_API_URL.
 axios.defaults.baseURL = process.env.REACT_APP_API_URL || "";
-import { Provider } from "react-redux";
-import store from "./redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
